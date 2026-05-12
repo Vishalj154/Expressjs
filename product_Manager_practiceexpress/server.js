@@ -55,7 +55,10 @@ app.delete('/products/:id',(req,res)=>{
   products.splice(index,1)
   res.json({message:`product with ${id} deleted successfully`})
 })
-app.get('/products?category=electronics',(req,res)=>{
+app.get('/products',(req,res)=>{
   const category=req.query.category
-  const serach=req.query.search
+  const {search}=req.query
+  // if search exists, filter — if not, return all
+  let result=search ? products.filter(p=>p.name.toLowerCase().includes(search.toLowerCase())) : products
+  res.json({products:result})
 })
