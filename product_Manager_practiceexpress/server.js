@@ -46,3 +46,11 @@ app.put('/products/:id',(req,res)=>{
  res.json({product:product})
 
 })
+app.delete('/products/:id',(req,res)=>{
+  const id=parseInt(req.params.id)
+  const index=products.findIndex(p=>p.id==id)
+  if(index== -1){
+    return res.status(404).json({error:`Product with id ${id} not found`})
+  }
+  products.splice(index,1)
+})
