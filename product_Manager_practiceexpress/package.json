@@ -1,0 +1,16 @@
+{
+  "name": "product_manager",
+  "version": "1.0.0",
+  "description": "app to practice expressjs('product manager')",
+  "license": "ISC",
+  "author": "Vishal",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
