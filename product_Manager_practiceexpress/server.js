@@ -55,3 +55,7 @@ app.delete('/products/:id',(req,res)=>{
   products.splice(index,1)
   res.json({message:`product with ${id} deleted successfully`})
 })
+app.get('/products?category=electronics',(req,res)=>{
+  const category=req.query.category
+  const serach=req.query.search
+})
