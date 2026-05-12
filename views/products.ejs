@@ -1,11 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
 </head>
+
 <body>
-    <h1> <%= title %> </h1>
+    <h1>
+        <%= title %>
+    </h1>
+    <% products.forEach(function(product) { %>
+        <div>
+
+            <%= product.name %> - ₹<%= product.price %>
+        </div>
+        <% if(product.stock < 6) { %>
+            <div style="color:red">
+                ⚠️only <%= product.stock %> left in stock!
+            </div>
+            <% } %>
+                <% }) %>
 </body>
+
 </html>
