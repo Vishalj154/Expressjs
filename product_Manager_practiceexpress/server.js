@@ -48,9 +48,11 @@ app.put('/products/:id',(req,res)=>{
  res.json({product:product})
 
 })
+
 app.get('/', (req, res) => {
-  res.render("products",{title:'Product Inventory'});
-});
+  res.render("products",{title:'Product Inventory',products:products});
+})
+
 app.delete('/products/:id',(req,res)=>{
   const id=parseInt(req.params.id)
   const index=products.findIndex(p=>p.id==id)
