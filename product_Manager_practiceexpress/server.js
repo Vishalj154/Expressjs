@@ -53,4 +53,5 @@ app.delete('/products/:id',(req,res)=>{
     return res.status(404).json({error:`Product with id ${id} not found`})
   }
   products.splice(index,1)
+  res.json({message:`product with ${id} deleted successfully`})
 })
