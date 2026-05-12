@@ -33,4 +33,16 @@ app.post('/products',(req,res)=>{
   products.push(newproduct)
   res.status(201).json(newproduct)
 })
-  
+app.put('/products/:id',(req,res)=>{
+  const id=parseInt(req.params.id)
+  const product=products.find(p=>p.id==id)
+  if (!product) {
+  return res.status(404).json({ error: `Product with id ${id} not found` })
+}
+ const {name,price,stock}=req.body
+ product.name=name
+ product.price=price
+ product.stock=stock
+ res.json({product:product})
+
+})
