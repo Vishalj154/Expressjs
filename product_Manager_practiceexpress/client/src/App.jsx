@@ -11,7 +11,7 @@ function App() {
     <Navbar/>
      <h1>Product Inventory</h1>
      <Routes>
-      <Route path='/'element={<Home/>}/>
+      <Route path='/' element={<Home/>}/>
       <Route path='/products' element={<Product/>}/>
      </Routes>
     </>
