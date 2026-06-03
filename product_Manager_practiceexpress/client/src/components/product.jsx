@@ -12,11 +12,8 @@ const Product = () => {
     <>
       <div>product</div>
       {products.map(p => (
-        <div key={p.id}>
-          <h2>{p.name}</h2>
-          <p>price: ₹{p.price}</p>
-          <p>stock: {p.stock}</p>
-        </div>
+        <ProductCard key={p.id} product={p} />
+      ))}
       ))}
     </>
   )
