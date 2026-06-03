@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import productcard from './productcard'
 
 const Product = () => {
   const [products,setproducts]= useState([]);
@@ -10,11 +11,11 @@ const Product = () => {
 }, [])
   return (
     <>
-      <div>product</div>
+      
       {products.map(p => (
         <ProductCard key={p.id} product={p} />
       ))}
-      ))}
+      
     </>
   )
 }
