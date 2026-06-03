@@ -6,6 +6,7 @@ const ProductCard = ({product}) => {
       <h2>{product.name}</h2>
       <p>price: ₹{product.price}</p>
       <p>stock: {product.stock}</p>
+      {product.stock < 6 && <p>⚠️ Low Stock</p>}
     </div>
   )
 }
