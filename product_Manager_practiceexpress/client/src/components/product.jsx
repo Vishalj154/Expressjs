@@ -1,23 +1,24 @@
 import React from 'react'
-import {useState, useEffect} from 'react'
+import { useState, useEffect } from 'react'
 import ProductCard from './productcard'
+import AddProduct from './AddProduct'
 
 const Product = () => {
-  const [products,setproducts]= useState([]);
-  useEffect(() => {
-  fetch('http://localhost:3000/products')
-    .then(res => res.json())
-    .then(data => setproducts(data.products))
-}, [])
-  return (
-    <>
-      
-      {products.map(p => (
-        <ProductCard key={p.id} product={p} />
-      ))}
-      
-    </>
-  )
+    const [products, setproducts] = useState([]);
+    useEffect(() => {
+        fetch('http://localhost:3000/products')
+            .then(res => res.json())
+            .then(data => setproducts(data.products))
+    }, [])
+    return (
+        <>
+            <AddProduct />
+            {products.map(p => (
+                <ProductCard key={p.id} product={p} />
+            ))}
+
+        </>
+    )
 }
 
 export default Product
